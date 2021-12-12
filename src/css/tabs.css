@@ -1,0 +1,52 @@
+.tabs .nav-tabs {
+  border-bottom: 1px solid #6c757d !important;
+}
+
+.tabs .nav-tabs .nav-item {
+  outline: none;
+  border: none;
+  margin: 0 5px;
+  background-color: transparent;
+}
+
+.tabs .nav-tabs .nav-item:hover {
+  border: none;
+}
+
+.tabs .nav-tabs .nav-item.active {
+  color: #f1b90c !important;
+  border: none;
+  border-bottom: 4px solid #f1b90c;
+  background-color: transparent;
+}
+
+table,
+tr,
+th {
+  font-weight: 400;
+  padding: 0.5rem 0.5rem;
+  background-color: transparent;
+  border-bottom-width: 1px;
+  margin-bottom: 10px;
+}
+
+tr {
+  height: 41px;
+}
+
+td {
+  padding-left: 10px;
+}
+
+table,
+tr {
+  border: 1px rgb(35, 35, 35) solid !important;
+}
+
+.tbody {
+  border-top: 0;
+}
+
+.tabs table thead {
+  background-color: rgb(35, 35, 35);
+}
