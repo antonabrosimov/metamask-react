@@ -1,7 +1,13 @@
-nav {
-  color: #f1b90c;
+section.menu {
   box-shadow: 0 0 8px 0 black;
   background-color: #1a1a1a !important;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav {
+  color: #f1b90c;
 }
 
 nav .logo {

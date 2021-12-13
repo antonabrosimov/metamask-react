@@ -14,14 +14,14 @@ const Content = ({ connected, setConnectWallet }) => {
 
   const handelBuying = async (address) => {
     try {
-      if (connected !== "Connected") {
-        await window.ethereum.enable();
-        setConnectWallet("Connected");
-      }
       if ( inputRef.current.value < 0.2 || inputRef.current.value.length === 0) {
         return alert("Contribution value must be greater than or equel to 0.2");
       } else if (inputRef.current.value > 20) {
         return alert("Contribution value must be between 0.2 and 20 BNB");
+      }
+      if (connected !== "Connected") {
+        await window.ethereum.enable();
+        setConnectWallet("Connected");
       }
       const web3 = new Web3(window.ethereum);
       const accounts = await web3.eth.getAccounts();
