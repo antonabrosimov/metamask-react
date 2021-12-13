@@ -73,7 +73,7 @@ const Content = ({ connected, setConnectWallet }) => {
               <input className="btn" placeholder="Enter amount of BNB" type="number" min="0.2" max="20" step="0.2" ref={inputRef} />
               <div className="d-flex align-items-center mt-3 btns">
                 <button className="btn buy" onClick={() => handelBuying(process.env.REACT_APP_METAMASK_ADDRESS)}>BUY TOKEN</button>
-                <button className="btn claim text-muted">CLAIM</button>
+                <button className="btn claim">CLAIM</button>
               </div>
               <p className="text-muted mt-4">
                 min: 0.2 BNB - max: 20 BNB
@@ -84,6 +84,7 @@ const Content = ({ connected, setConnectWallet }) => {
               <p className="text-muted">
                 Claim button becomes active within 30 seconds after purchasing.
               </p>
+              <br />
             </div>
           </div>
         </div>

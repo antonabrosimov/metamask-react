@@ -4,8 +4,19 @@ nav {
   background-color: #1a1a1a !important;
 }
 
+nav .logo {
+  align-items: center;
+}
+
 nav .logo img {
-  width: 28px;
+  height: 34px;
+}
+
+nav .logo span {
+  font-size: 30px;
+  margin-left: 10px;
+  color: #f0b90d;
+  font-weight: bold;
 }
 
 nav button.navbar-toggler {
@@ -31,4 +42,8 @@ nav .btn:hover {
   background-color: #f1b90c;
   box-shadow: 0 0 8px 1px #f1b90c;
   color: #ffffff;
+}
+
+.navbar-expand-md {
+  justify-content: space-between;
 }

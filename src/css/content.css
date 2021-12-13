@@ -58,13 +58,14 @@
 .content .left-section span {
   padding: 3px 10px 4px 10px;
   background-color: rgb(240 185 19 / 26%);
-  color: #02bf02;
+  color: #f1b90c;
   border-radius: 16px;
   font-size: 12px;
 }
 
 .content span.open {
-  background-color: rgb(0, 128, 0, 0.25);
+  background-color: rgb(0, 128, 0, 0.8);
+  color:rgb(14, 189, 14)
 }
 
 .content input {
@@ -92,8 +93,9 @@
 
 .content .btns .btn.claim {
   background: none;
-  background-color: #00800078;
-  border-color: #00800078;
+  background-color: #f1b90c78;
+  border: none;
+  color: #ffffff78;
 }
 
 .content .btns .btn.buy:hover {
