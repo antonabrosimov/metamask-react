@@ -19,7 +19,7 @@ nav .logo img {
 }
 
 nav .logo span {
-  font-size: 27px;
+  font-size: 26px;
   line-height: 1;
   margin-left: 10px;
   color: #f0b90d;
@@ -29,7 +29,7 @@ nav .logo span {
 nav button.navbar-toggler {
   border: none !important;
   outline: none !important;
-  box-shadow: none !important
+  box-shadow: none !important;
 }
 
 nav .navbar-toggler-icon {
@@ -43,6 +43,8 @@ nav .btn {
   color: #f1b90c;
   gap: 3px;
   transition: 0.5s;
+  font-size: 0.875rem;
+  padding: 4px 18px;
 }
 
 nav .btn:hover {
@@ -53,4 +55,12 @@ nav .btn:hover {
 
 .navbar-expand-md {
   justify-content: space-between;
+}
+
+.navbar {
+  padding: 8px 0;
+}
+
+.navbar-brand {
+  padding: 0;
 }
