@@ -1,0 +1,10 @@
+.pp-footer {
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+body .pp-footer-link a {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 6px;
+  font-weight: bold;
+}

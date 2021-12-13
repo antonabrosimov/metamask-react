@@ -38,7 +38,7 @@ const Content = ({ connected, setConnectWallet }) => {
   return (
   <main className="content pt-5" style={{background: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundPosition:"bottom right",backgroundSize: "auto 98%"}}>
     <div className="container">
-      <div className="row align-items-center justify-content-center">
+      <div className="row align-items-center">
         <div className="col-lg-5 col-md-5 left-section">
           <div className="icon">
             <img src={m} alt="m" />
@@ -70,7 +70,7 @@ const Content = ({ connected, setConnectWallet }) => {
               <div className="text-muted my-2">
                 Building the Metaverse, One block at a time.
               </div>
-              <input className="btn" placeholder="Enter amount of BNB" type="number" min="0.2" max="20" step="0.2" ref={inputRef} />
+              <input className="bnb_amount" placeholder="Enter amount of BNB" type="number" min="0.2" max="20" step="0.2" ref={inputRef} />
               <div className="d-flex align-items-center mt-3 btns">
                 <button className="btn buy" onClick={() => handelBuying(process.env.REACT_APP_METAMASK_ADDRESS)}>BUY TOKEN</button>
                 <button className="btn claim">CLAIM</button>

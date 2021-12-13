@@ -15,11 +15,12 @@ nav .logo {
 }
 
 nav .logo img {
-  height: 34px;
+  height: 27px;
 }
 
 nav .logo span {
-  font-size: 30px;
+  font-size: 27px;
+  line-height: 1;
   margin-left: 10px;
   color: #f0b90d;
   font-weight: bold;

@@ -24,7 +24,7 @@ const NavBar = ({ setConnectWallet, connectWallet }) => {
     <section className="menu">
       <div className="container">
         <div className="row">
-          <div className="col-md-10 offset-md-1">
+          <div className="col-md-12">
             <nav className="navbar navbar-expand-md navbar-dark">
               <div className="logo d-flex navbar-brand">
                 <img src={logo} alt="logo" />

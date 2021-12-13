@@ -1,3 +1,11 @@
+.tabs {
+  min-height: 350px;
+}
+
+.tabs table {
+  width: 100%;
+}
+
 .tabs .nav-tabs {
   border-bottom: 1px solid #6c757d !important;
 }
