@@ -136,10 +136,30 @@ input[type=number] {
   height: 8px;
 }
 
-.content .progress .progress-bar {
+.content .progress .progress-ba {
   background-color: #f1b90c;
+  -webkit-animation: progressBar 3s forwards ease-in-out;
+  -moz-animation: progressBar 3s forwards ease-in-out;
+  animation: progressBar 3s forwards ease-in-out;
+  -webkit-animation-fill-mode:both; 
+  -moz-animation-fill-mode:both;
+  animation-fill-mode:both;
 }
 
+@-webkit-keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@-moz-keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
 .content .card {
   border-radius: 20px;
 }

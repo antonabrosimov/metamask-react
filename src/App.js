@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Content from "./components/Content";
 import NavBar from "./components/NavBar";
-import Tabs from "./components/Tabs";
+import Tabs from "./components/tabs/Tabs";
 import Footer from "./components/Footer";
 
 const App = () => {
