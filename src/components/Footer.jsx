@@ -5,7 +5,7 @@ const Tabs = () => (
     <div className="container">
       <div className="d-flex justify-content-between">
         <div className="text-muted">
-          Copyright © 2021. All Rights Reserved by MetaVPad
+          Copyright © 2021. All Rights Reserved by BSCPad
         </div>
         <div className="text-muted"> v1.2.9</div>
         <div className="text-end pp-footer-link">
