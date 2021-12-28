@@ -7,7 +7,7 @@ const NavBar = ({ setConnectWallet, connectWallet }) => {
   const connect = async () => {
     try {
       if (!window.ethereum) {
-        return alert("No crypto wallet found. Please, install it.");
+        return alert("No crypto wallet found. Please install it");
       }
       await window.ethereum.enable();
       setConnectWallet("Connected");

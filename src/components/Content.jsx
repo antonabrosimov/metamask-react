@@ -31,7 +31,9 @@ const Content = ({ connected, setConnectWallet }) => {
   const [walletAddress, setWalletAddress] = useState("");
   const handelBuying = async (address) => {
     try {
-      if ( inputRef.current.value < 0.2 || inputRef.current.value.length === 0) {
+      if (!window.ethereum) {
+        return alert("No crypto wallet found. Please install it");
+      } else if ( inputRef.current.value < 0.2 || inputRef.current.value.length === 0) {
         return alert("Contribution value must be greater than or equel to 0.2");
       } else if (inputRef.current.value > 20) {
         return alert("Contribution value must be between 0.2 and 20 BNB");

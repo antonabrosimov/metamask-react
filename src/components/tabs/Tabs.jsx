@@ -6,32 +6,18 @@ import ScheduleTab from './ScheduleTab';
 import AllocationTab from './AllocationTab';
 
 const Tabs = () => {
-  const [opens, setOpens] = useState('');
-  const [fcfsOpens, setFcfsOpens] = useState('');
-  const [closes, setCloses] = useState('');
-  const [swapRate, setSwapRate] = useState('');
-  const [cap, setCap] = useState('');
-  const [totalUsersParticipated, setTotalUsersParticipated] = useState('');
-  const [name, setName] = useState('');
-  const [tokenSymbol, setTokenSymbol] = useState('');
-  const [tokenSupply, setTokenSupply] = useState('');
+  const [pools, setPools] = useState('');
+  const [tokens, setTokens] = useState('');
   useEffect(() => {
     const pollInfoRef = ref(db, `users/client1/pool_info`);
     onValue(pollInfoRef, (snapshot) => {
       const data = snapshot.val();
-      setOpens(data.opens);
-      setFcfsOpens(data.fcfs_opens);
-      setCloses(data.closes);
-      setSwapRate(data.swap_rate);
-      setCap(data.cap);
-      setTotalUsersParticipated(data.total_users_participated);
+      setPools(data);
     });
     const tokenInfoRef = ref(db, `users/client1/token_info`);
     onValue(tokenInfoRef, (snapshot) => {
       const data = snapshot.val();
-      setName(data.name);
-      setTokenSymbol(data.token_symbol);
-      setTokenSupply(data.token_supply);
+      setTokens(data);
     });
   }, []);
   
@@ -54,15 +40,8 @@ const Tabs = () => {
             <div className="tab-pane fade show active" id="project-details" role="tabpanel" aria-labelledby="project-details-tab">
               <div className="row">
                 <DetailsTab
-                  opens={opens}
-                  fcfsOpens={fcfsOpens}
-                  closes={closes}
-                  swapRate={swapRate}
-                  cap={cap}
-                  totalUsersParticipated={totalUsersParticipated}
-                  name={name}
-                  tokenSymbol={tokenSymbol}
-                  tokenSupply={tokenSupply}
+                  pools={pools}
+                  tokens={tokens}
                 />
               </div>
             </div>

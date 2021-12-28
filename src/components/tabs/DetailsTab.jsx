@@ -1,15 +1,8 @@
 import React from 'react';
 
 const DetailsTab = ({
-  opens,
-  fcfsOpens,
-  closes,
-  swapRate,
-  cap,
-  totalUsersParticipated,
-  name,
-  tokenSymbol,
-  tokenSupply
+  pools,
+  tokens,
 }) => (
   <>
     <div className="col-md-7">
@@ -20,30 +13,23 @@ const DetailsTab = ({
           </tr>
         </thead>
         <tbody>
+        {
+          pools ?
+            Object.keys(pools).map((poolKey) => {
+              const pool = pools[poolKey];
+              return (
+                <tr key={poolKey}>
+                  <td>{pool.name}</td>
+                  <td>{pool.value}</td>
+                </tr> 
+              );
+            })
+          :
           <tr>
-            <th scope="row">Opens</th>
-            <td>{opens}</td>
+            <td></td>
+            <td></td>
           </tr>
-          <tr>
-            <th scope="row">FCFS Opens</th>
-            <td>{fcfsOpens}</td>
-          </tr>
-          <tr>
-            <th scope="row">Closes</th>
-            <td>{closes}</td>
-          </tr>
-          <tr>
-            <th scope="row">Swap Rate</th>
-            <td>{swapRate}</td>
-          </tr>
-          <tr>
-            <th scope="row">Cap</th>
-            <td>{cap}</td>
-          </tr>
-          <tr>
-            <th scope="row">Total Users Participated</th>
-            <td>{totalUsersParticipated}</td>
-          </tr>
+        }
         </tbody>
       </table>
     </div>
@@ -55,30 +41,23 @@ const DetailsTab = ({
           </tr>
         </thead>
         <tbody>
+        {
+          tokens ?
+            Object.keys(tokens).map((tokenKey) => {
+              const token = tokens[tokenKey];
+              return (
+                <tr key={tokenKey}>
+                  <td>{token.name}</td>
+                  <td>{token.value}</td>
+                </tr> 
+              );
+            })
+          :
           <tr>
-            <th scope="row">Name</th>
-            <td>{name}</td>
-          </tr>
-          <tr>
-            <th scope="row">Token Symbol</th>
-            <td>{tokenSymbol}</td>
-          </tr>
-          <tr>
-            <th scope="row">Token Supply</th>
-            <td>{tokenSupply}</td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
+            <td></td>
             <td></td>
           </tr>
-          <tr>
-            <th scope="row"></th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td></td>
-          </tr>
+        }
         </tbody>
       </table>
     </div>
