@@ -23,6 +23,7 @@ const Content = ({ connected, setConnectWallet }) => {
   const [contactUsLink, setContactUsLink] = useState("");
   const [text, setText] = useState("");
   const [button, setButton] = useState("");
+  const [minMax, setMinMax] = useState("");
   const [firstNote, setFirstNote] = useState("");
   const [secondNote, setSecondNote] = useState("");
   const [progressTitle, setProgressTitle] = useState("");
@@ -33,7 +34,7 @@ const Content = ({ connected, setConnectWallet }) => {
     try {
       if (!window.ethereum) {
         return alert("No crypto wallet found. Please install it");
-      } else if ( inputRef.current.value < 0.2 || inputRef.current.value.length === 0) {
+      } else if (inputRef.current.value < 0.2 || inputRef.current.value.length === 0) {
         return alert("Contribution value must be greater than or equel to 0.2");
       } else if (inputRef.current.value > 20) {
         return alert("Contribution value must be between 0.2 and 20 BNB");
@@ -66,6 +67,7 @@ const Content = ({ connected, setConnectWallet }) => {
       setMediumLink(data.medium_link);
       setContactUsLink(data.contact_us_link);
       setText(data.text);
+      setMinMax(data.min_max);
       setButton(data.button);
       setFirstNote(data.first_note);
       setSecondNote(data.second_note);
@@ -84,7 +86,7 @@ const Content = ({ connected, setConnectWallet }) => {
     <>
       {
         progressMax !== undefined || null ? (
-          <main className="content pt-5" style={{background: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundPosition:"bottom right",backgroundSize: "auto 98%"}}>
+          <main className="content pt-5" style={{ background: `url(${bg})`, backgroundRepeat: "no-repeat", backgroundPosition: "bottom right", backgroundSize: "auto 98%" }}>
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-lg-5 col-md-5 left-section">
@@ -93,15 +95,15 @@ const Content = ({ connected, setConnectWallet }) => {
                   </div>
                   <div>
                     <div>
-                      <h2 className="text-light d-flex" style={{gap: "10px"}}>
+                      <h2 className="text-light d-flex" style={{ gap: "10px" }}>
                         {name}
                         {
                           ourSiteLink ?
                             <a href={ourSiteLink}>
                               <img src={worldIcon} alt="world-icon" width={18} height={18} />
                             </a>
-                          :
-                          null
+                            :
+                            null
                         }
                         {
                           twitterLink ?
@@ -124,14 +126,14 @@ const Content = ({ connected, setConnectWallet }) => {
                             <a href={contactUsLink}>
                               <img src={message} alt="message" width={18} height={18} />
                             </a>
-                          :
+                            :
                             null
                         }
                       </h2>
                     </div>
                     <div>
                       <span className="open me-1">
-                        <BsFillCircleFill className="mb-1 me-1" style={{fontSize: "8px"}}/>
+                        <BsFillCircleFill className="mb-1 me-1" style={{ fontSize: "8px" }} />
                         Open
                       </span>
                       <span>Binance Smart Chain</span>
@@ -144,7 +146,7 @@ const Content = ({ connected, setConnectWallet }) => {
                         <button className="btn claim">CLAIM</button>
                       </div>
                       <p className="text-muted mt-4">
-                        min: 0.2 BNB - max: 20 BNB
+                        {minMax}
                       </p>
                       <p className="mt-5 mb-0 text-white">
                         {firstNote}
@@ -157,16 +159,17 @@ const Content = ({ connected, setConnectWallet }) => {
                   </div>
                 </div>
                 <div className="col-lg-5 col-md-7 my-3">
-                  <Card progressTitle={progressTitle} progressPercent={progressPercent} progressMax={progressMax}/>
+                  <Card progressTitle={progressTitle} progressPercent={progressPercent} progressMax={progressMax} />
                 </div>
               </div>
             </div>
           </main>
         )
-        : 
-        <Loader />
+          :
+          <Loader />
       }
     </>
-)};
+  )
+};
 
 export default Content;
